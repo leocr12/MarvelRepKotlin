@@ -26,10 +26,10 @@ class CharacterAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val viewHolder: RecyclerView.ViewHolder
         val inflater = LayoutInflater.from(parent.context)
 
-        when (viewType) {
-            0 -> viewHolder = CharacterAdapterHolder(inflater.inflate(R.layout.character_list, parent, false))
-            1 -> viewHolder = LoadingViewHolder(inflater.inflate(R.layout.item_progress, parent, false))
-            else -> viewHolder = CharacterAdapterHolder(inflater.inflate(R.layout.character_list, parent, false))
+        viewHolder = when (viewType) {
+            0 -> CharacterAdapterHolder(inflater.inflate(R.layout.character_list, parent, false))
+            1 -> LoadingViewHolder(inflater.inflate(R.layout.item_progress, parent, false))
+            else -> CharacterAdapterHolder(inflater.inflate(R.layout.character_list, parent, false))
         }
 
         return viewHolder
@@ -44,9 +44,7 @@ class CharacterAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 characterHolder.description.text = character.description
                 Picasso.with(context).load(character.thumbnail.imageUrl).into(characterHolder.image)
                 holder.itemView.setOnClickListener {
-                    val intent = Intent(context, ComicActivity::class.java)
-                    intent.putExtra(EXTRA_MESSAGE, character)
-                    context!!.startActivity(intent)
+
                 }
             }
 
@@ -86,7 +84,7 @@ class CharacterAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     fun addLoadingFooter() {
         isLoadingAdded = true
-        add(Character(0, "", "", null))
+        add(Character(0, "", "", Thumbnail("")))
     }
 
     fun removeLoadingFooter() {

@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 def marvelKeyPropertiesFile = rootProject.file("marvel_key.properties")
 def marvelKeyProperties = new Properties()
 marvelKeyProperties.load(new FileInputStream(marvelKeyPropertiesFile))

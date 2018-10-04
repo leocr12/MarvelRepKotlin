@@ -13,21 +13,21 @@ class CharacterPresenter(private val view: CharacterContract.View): CharacterCon
 
     private fun success(response: CharactersResponse) {
         view.hideProgressBar()
-        response.characterData?.characters?.let {
+        response.data?.results?.let {
             view.loadFirstPage(it,
-                response.characterData.count,
-                response.characterData.total)
+                response.data.count,
+                response.data.total)
         }
-        response.characterData?.characters?.let { insertCharactersIntoDatabase(it) }
+        insertCharactersIntoDatabase(response.data?.results!!)
     }
 
     private fun successMore(response: CharactersResponse) {
         view.hideProgressBar()
-        response.characterData?.characters?.let {
+        response.data?.results?.let {
             view.loadNextPage(it,
-                response.characterData.count)
+                response.data.count)
         }
-        response.characterData?.characters?.let { insertCharactersIntoDatabase(it) }
+        response.data?.results?.let { insertCharactersIntoDatabase(it) }
     }
 
     private fun error(t: Throwable) {
@@ -59,11 +59,11 @@ class CharacterPresenter(private val view: CharacterContract.View): CharacterCon
         view.setCharacterData(characters)
     }
 
-    override fun insertCharactersIntoDatabase(characters: List<Character>) {
+    override fun insertCharactersIntoDatabase(characters: MutableList<Character>) {
         Injector.provideDatabaseHelper().insertCharacters(characters)
     }
 
-    override fun retrieveAllCharacters(): List<Character> {
+    override fun retrieveAllCharacters(): MutableList<Character> {
         return Injector.provideDatabaseHelper().allCharacters
     }
 

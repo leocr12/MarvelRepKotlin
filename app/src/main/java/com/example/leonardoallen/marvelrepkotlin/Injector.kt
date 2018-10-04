@@ -40,7 +40,7 @@ class Injector {
         }
 
         fun provideNetworkUtil(): NetworkUtils {
-            return NetworkUtils.getInstance(MarvelApplication.context.get())
+            return NetworkUtils.getInstance()
         }
 
         fun provideDatabaseHelper(): DatabaseHelper {
