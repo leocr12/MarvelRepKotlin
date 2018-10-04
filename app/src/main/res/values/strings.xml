@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">InterviewProject</string>
+    <string name="characters_title">Characters</string>
+    <string name="comic_activity">Comic Activity</string>
+    <string name="price_error_message">There is no price available</string>
+    <string name="print_price">Print Price:</string>
+    <string name="digital_price">Digital Purchase Price:</string>
+</resources>
