@@ -10,8 +10,16 @@ interface MarvelApi {
     @GET("characters?$authentication")
     fun characters(): Observable<CharactersResponse>
 
+    @GET("characters/{characterId}/comics?$authentication")
+    fun character(
+            @Path("characterId") characterId: Int): Observable<ComicResponse>
+
     @GET("characters?$authentication")
     fun getMoreCharacters(@Query("offset") offset: Int): Observable<CharactersResponse>
+
+    @GET("characters/{characterId}/comics?$authentication")
+    fun getMoreComics(@Path("characterId") characterId: Int,
+                      @Query("offset") offset: Int): Observable<ComicResponse>
 
     companion object {
 

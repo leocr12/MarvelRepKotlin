@@ -20,6 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ComicActivity"
+            android:label="@string/comic_activity"
+            android:parentActivityName=".CharacterActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CharacterActivity"/>
+        </activity>
     </application>
 
 </manifest>

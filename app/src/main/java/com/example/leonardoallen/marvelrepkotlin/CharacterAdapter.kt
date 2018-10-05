@@ -44,7 +44,9 @@ class CharacterAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 characterHolder.description.text = character.description
                 Picasso.with(context).load(character.thumbnail.imageUrl).into(characterHolder.image)
                 holder.itemView.setOnClickListener {
-
+                    val intent = Intent(context, ComicActivity::class.java)
+                    intent.putExtra(EXTRA_MESSAGE, character)
+                    context!!.startActivity(intent)
                 }
             }
 
