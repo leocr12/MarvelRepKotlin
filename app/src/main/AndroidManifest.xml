@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CharacterActivity">
+        <activity android:name=".character.view.CharacterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,12 +21,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ComicActivity"
+            android:name=".comic.view.ComicActivity"
             android:label="@string/comic_activity"
-            android:parentActivityName=".CharacterActivity">
+            android:parentActivityName=".character.view.CharacterActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".CharacterActivity"/>
+                android:value=".character.view.CharacterActivity"/>
         </activity>
     </application>
 
