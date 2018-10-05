@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/generic_margin_large"
+    >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/generic_margin_medium"
+        app:cardBackgroundColor="@color/grey"
+        app:cardCornerRadius="3dp"
+        app:cardPreventCornerOverlap="false"
+        >
+
+        <ProgressBar
+            android:id="@+id/movie_progress"
+            android:layout_width="@dimen/generic_margin_large"
+            android:layout_height="@dimen/generic_margin_large"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            style="@style/Widget.AppCompat.ProgressBar"
+            />
+
+        <ImageView
+            android:id="@+id/comic_image"
+            android:layout_width="@dimen/generic_image_width"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            />
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/generic_margin_large"
+        android:paddingEnd="@dimen/generic_margin_large"
+        android:paddingStart="@dimen/generic_image_width"
+        android:paddingTop="@dimen/generic_margin_medium"
+        >
+
+        <TextView
+            android:id="@+id/comic_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/generic_margin_huge"
+            android:layout_marginTop="@dimen/generic_margin_small"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            tools:text="Avengers: The Initiative (1996) #0"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            />
+
+        <TextView
+            android:id="@+id/comic_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/generic_margin_huge"
+            android:layout_marginTop="@dimen/generic_margin_medium"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/whiteGrey"
+            tools:text="America in the battle that will decide the fate of the planet and the future of the Initiative program. Will the Kill Krew Army win the day?"
+            style="@style/TextAppearance.AppCompat.Caption"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            >
+
+            <TextView
+                android:id="@+id/print_price_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/generic_margin_huge"
+                android:layout_marginStart="@dimen/generic_margin_huge"
+                android:layout_weight="1.7"
+                android:alpha="0.38"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="@string/print_price"
+                android:textColor="#18FFFF"
+                android:textStyle="bold"
+                style="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <TextView
+                android:id="@+id/print_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/generic_margin_huge"
+                android:layout_marginStart="@dimen/generic_margin_huge"
+                android:alpha="0.38"
+                android:gravity="end"
+                android:maxLines="1"
+                android:textColor="#18FFFF"
+                android:textStyle="bold"
+                tools:text="$2.99"
+                style="@style/TextAppearance.AppCompat.Caption"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            >
+
+            <TextView
+                android:id="@+id/digital_purchase_price_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/generic_margin_huge"
+                android:layout_marginStart="@dimen/generic_margin_huge"
+                android:layout_weight="1.7"
+                android:alpha="0.38"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="@string/digital_price"
+                android:textColor="#18FFFF"
+                android:textStyle="bold"
+                style="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <TextView
+                android:id="@+id/digital_purchase_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/generic_margin_huge"
+                android:layout_marginStart="@dimen/generic_margin_huge"
+                android:alpha="0.38"
+                android:gravity="end"
+                android:maxLines="1"
+                android:textColor="#18FFFF"
+                android:textStyle="bold"
+                tools:text="$2.99"
+                style="@style/TextAppearance.AppCompat.Caption"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

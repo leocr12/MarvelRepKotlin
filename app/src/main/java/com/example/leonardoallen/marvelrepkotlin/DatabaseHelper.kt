@@ -11,4 +11,16 @@ class DatabaseHelper {
         marvelDatabase.marvelDao().insert(characters)
     }
 
+    fun insertComics(comics: MutableList<Comic>) {
+        marvelDatabase.comicDao().insert(comics)
+    }
+
+    fun isComicEmpty(characterId: Int): Boolean {
+        return marvelDatabase.comicDao().getComics(characterId).isEmpty()
+    }
+
+    fun getComics(characterId: Int): MutableList<Comic> {
+        return marvelDatabase.comicDao().getComics(characterId)
+    }
+
 }

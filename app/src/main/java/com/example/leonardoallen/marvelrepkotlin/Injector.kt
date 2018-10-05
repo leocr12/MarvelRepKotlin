@@ -39,6 +39,10 @@ class Injector {
             return CharacterRepository()
         }
 
+        fun provideComicRepository(): ComicRepository {
+            return ComicRepository()
+        }
+
         fun provideNetworkUtil(): NetworkUtils {
             return NetworkUtils.getInstance()
         }
